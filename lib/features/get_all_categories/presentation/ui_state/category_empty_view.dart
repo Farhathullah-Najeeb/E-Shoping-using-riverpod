@@ -1,11 +1,11 @@
 import 'package:flutter/widgets.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class HomeErrorViewState extends StatelessWidget {
-  const HomeErrorViewState({super.key});
+class CategoryEnptyView extends StatelessWidget {
+  const CategoryEnptyView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return "error".text.make();
+    return "empty".text.make();
   }
 }

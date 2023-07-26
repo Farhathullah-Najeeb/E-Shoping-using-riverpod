@@ -17,6 +17,15 @@ class AppRouter extends $AppRouter {
         AutoRoute(
           page: SingleProductRouter.page,
           path: '/SingleProductRouter',
-        )
+        ),
+        AutoRoute(
+          page: SpecificCategoryRouter.page,
+          path: '/SpeceficCategory',
+        ),
+         AutoRoute(
+          page: GetAllCrartsRouter.page,
+          path: '/GetAllCrarts',
+        ),
+       
       ];
 }

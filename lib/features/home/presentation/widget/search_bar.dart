@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class SearchFormBuilder extends StatelessWidget {
-  const SearchFormBuilder({super.key});
+class SearchBar extends StatelessWidget {
+  const SearchBar({super.key});
 
   @override
   Widget build(BuildContext context) {

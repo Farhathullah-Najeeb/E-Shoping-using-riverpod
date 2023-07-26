@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class HomeLoadingView extends StatelessWidget {
-  const HomeLoadingView({super.key});
+class GetAllCartsLoadingView extends StatelessWidget {
+  const GetAllCartsLoadingView({super.key});
 
   @override
   Widget build(BuildContext context) {

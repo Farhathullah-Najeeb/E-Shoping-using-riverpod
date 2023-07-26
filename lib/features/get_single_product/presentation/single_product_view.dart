@@ -8,7 +8,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 
 @RoutePage(
-  name: 'SingleProductRoute',
+  name: 'SingleProductRouter',
   deferredLoading: true,
 )
 class SingleProductView extends StatelessWidget {
@@ -28,7 +28,7 @@ class SingleProductView extends StatelessWidget {
 
               return getSingleProductData.when(
                 data: (singleproductData) =>  //(singleproductData)ivede endhm nammk kodkka..adhile valu modelclassnte value anu
-                SingleProductSuccessView(singleproductData: singleproductData,),
+                SingleProductSuccessView(singleproductData: singleproductData, ),
                 error: (error, stackTrace) => const SingleProductErrorView(),
                 loading: () => const SingleProductLoadingState(),
                 skipLoadingOnRefresh: false,

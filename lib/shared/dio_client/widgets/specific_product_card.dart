@@ -1,14 +1,18 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:e_shoping_app/data/model/user_get_products_model.dart';
-import 'package:e_shoping_app/router/auto_route_provider.dart';
-import 'package:e_shoping_app/router/router.gr.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class ProductCard extends ConsumerWidget {
-  final Getdatamodel productdata;
-  const ProductCard({super.key, required this.productdata});
+class SpecificProductCard extends ConsumerWidget {
+  final String image;
+  final int id;
+  final String category;
+  final int price;
+  final String description;
+
+  const SpecificProductCard( {required this.image, required this.id, required this.category,required this.description,
+    super.key, required this.price,
+  });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -23,11 +27,11 @@ class ProductCard extends ConsumerWidget {
           child: [
             5.heightBox,
             CachedNetworkImage(
-              imageUrl: productdata.image,
+              imageUrl: image,
               placeholder: (context, url) => const CircularProgressIndicator(),
               errorWidget: (context, url, error) => const Icon(Icons.error),
             ).h(70).w(80),
-            productdata.id.text
+            id.text
                 .size(0.5)
                 .color(Colors.white)
                 .semiBold
@@ -42,18 +46,16 @@ class ProductCard extends ConsumerWidget {
                 .pOnly(top: 10)
           ].vStack()),
       [
-        productdata.category.text.base.size(5).color(Colors.black).make(),
-        productdata.price.text.base.size(5).color(Colors.black).make(),
+        category.text.base.size(5).color(Colors.black).make(),
+       
       ].hStack(alignment: MainAxisAlignment.spaceBetween),
-      productdata.description.text
+      description.text
           .size(10)
           .overflow(TextOverflow.ellipsis)
           .color(Colors.grey)
           .fontWeight(FontWeight.w500)
           .make()
           .pOnly(top: 5)
-    ].vStack().onTap(() {
-      ref.read(autorouterProvider).navigate(SingleProductRouter(id: productdata.id));
-    });
+    ].vStack();
   }
 }

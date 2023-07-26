@@ -1,40 +1,47 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:e_shoping_app/data/model/get_all_carts.dart';
 import 'package:e_shoping_app/data/model/single_product_model.dart';
+import 'package:e_shoping_app/features/add_carts/presentation/cart.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class SingleProductSuccessView extends StatelessWidget {
   final GetSingleProductModel singleproductData;
-  const SingleProductSuccessView({super.key, required this.singleproductData});
+
+  const SingleProductSuccessView({
+    super.key,
+    required this.singleproductData,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         const HeightBox(20),
-        const Text("TITLE"),
+        Text(singleproductData.title),
         Center(
             child: CachedNetworkImage(
           imageUrl: singleproductData.image,
           progressIndicatorBuilder: (context, url, progress) =>
-              const CircularProgressIndicator(
-                
-              ),
+              const CircularProgressIndicator(),
         )),
         Padding(
           padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
-                "Catogory :",
-                style: TextStyle(fontSize: 8, fontWeight: FontWeight.w700),
-              ),
               Text(
                 singleproductData.category,
                 style:
                     const TextStyle(fontSize: 8, fontWeight: FontWeight.w700),
-              )
+              ),
+              AddToCartButton(
+                  userId: 1,
+                  date: DateTime.now().toString(),
+                  products: [
+                    Product(productId: singleproductData.id, quantity: 2)
+                  ],
+                  quandity: 1)
             ],
           ),
         ),

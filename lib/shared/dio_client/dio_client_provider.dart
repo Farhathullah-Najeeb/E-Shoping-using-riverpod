@@ -11,8 +11,6 @@ final dioProvider = Provider.autoDispose((ref) {
   final dio = Dio();
 
   dio.options.baseUrl = 'https://fakestoreapi.com/';
-  'https://fakestoreapi.com/';
-  'https://fakestoreapi.com/products/';
 
   dio.interceptors.add(
     TalkerDioLogger(

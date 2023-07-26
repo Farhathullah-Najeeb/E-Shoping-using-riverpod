@@ -55,7 +55,6 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
         child: [
           FormBuilderTextField(
             name: 'Username',
-            
             autovalidateMode: AutovalidateMode.onUserInteraction,
             decoration: InputDecoration(
               label: "Username".text.make(),
@@ -142,7 +141,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                         borderRadius: BorderRadius.circular(30.0),
                       ),
                       backgroundColor: Colors.greenAccent),
-                  child:const CircularProgressIndicator(),
+                  child: const CircularProgressIndicator(),
                 ),
               );
             },
